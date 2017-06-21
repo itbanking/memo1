@@ -8,9 +8,7 @@
 <title>ListAll</title>
 </head>
 <body>
-	<c:forEach items="${memos}" var="m">
-		글번호 = '${m.mno}' , 제목 = '${m.title}' , 내용 = '${m.mcontent}' , 날짜 = '${m.mdate}' , 회원이름 = '${m.membername}'<br>
-	</c:forEach>
+	${memo}
 
 </body>
 </html>

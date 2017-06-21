@@ -5,12 +5,15 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>ListAll</title>
+<title>pageMemos</title>
 </head>
 <body>
-	<c:forEach items="${memos}" var="m">
-		글번호 = '${m.mno}' , 제목 = '${m.title}' , 내용 = '${m.mcontent}' , 날짜 = '${m.mdate}' , 회원이름 = '${m.membername}'<br>
+	<c:forEach var="memos" items="${page.memos}">
+		<a href="/memo/item/${memos.mno}">${memos.mno}</a> , ${memos.title}, ${memos.mcontent}, ${memos.mdate}, ${memos.membername} <br>
 	</c:forEach>
-
+		<c:forEach var="i" begin="${page.pagination.firstPage}" end="${page.pagination.lastPage}" >
+		<a href="/memo/page/${i}">${i}</a>
+	</c:forEach>
+	
 </body>
 </html>
