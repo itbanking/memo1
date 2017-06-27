@@ -24,4 +24,14 @@
 	)
 
 </insert>
+
+<update id="update">
+	update memo
+		set 
+			title		= #{title},
+			mcontent	= #{mcontent},
+			mdate		= #{mdate},
+			membername	= #{membername}
+		where mno = #{mno}
+</update>
 </mapper>

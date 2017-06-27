@@ -2,6 +2,7 @@ package com.example.mapper;
 
 import java.util.List;
 
+import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 
@@ -39,5 +40,15 @@ public interface MemoMapper {
 	 * 	insert
 	 */
 	int insert(Memo memo);
-
+	
+	/*
+	 * 	update
+	 */
+	int update(Memo memo);
+	
+	/*
+	 * 	delete
+	 */
+	@Delete("delete from memo where mno=#{mno}")
+	int delete(int mno);
 }
